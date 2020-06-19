@@ -2,8 +2,8 @@
 var currentHourMilitaryTime = parseInt(moment().format("HH"))
 var currentDate = moment().format("MMM Do, YYYY");
 var storageArray = JSON.parse(localStorage.getItem("user")) || [];
-// PAGE LOAD NONSENSE ----------------------------------
 
+// PAGE LOAD NONSENSE ----------------------------------
 pageLoad()
 populateText(9)
 
@@ -25,10 +25,10 @@ function pageLoad() {
 }
 
 function populateText(x) {
-for (let i = 0; i < storageArray.length; i++) {
-        $("#"+x+"time").text(storageArray[i]);
+    for (let i = 0; i < storageArray.length; i++) {
+        $("#" + x + "time").text(storageArray[i]);
         x++;
-    }    
+    }
 }
 
 // EVENT LISTENERS ------------------------------------
