@@ -4,11 +4,11 @@ var currentDate = moment().format("MMM Do, YYYY");
 var storageArray = JSON.parse(localStorage.getItem("user")) || [];
 // PAGE LOAD NONSENSE ----------------------------------
 
-onRun()
+pageLoad()
 populateText(9)
 
 // FUNCTIONS ------------------------------------------
-function onRun() {
+function pageLoad() {
     $("#currentDay").append(currentDate)
     for (let i = 9; i <= 17; i++) {
         timeCheck([i]);
@@ -31,13 +31,9 @@ for (let i = 0; i < storageArray.length; i++) {
     }    
 }
 
-function ductTape(){
-    storageArray=[];
-}
-
 // EVENT LISTENERS ------------------------------------
 $("button").click(function() {
-    ductTape();
+    storageArray=[];
     for (let i = 0; i < ($("textarea").length); i++) {    
         storageArray.push($("textarea")[i].value);
     }
