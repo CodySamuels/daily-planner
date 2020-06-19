@@ -39,3 +39,5 @@ $("button").click(function() {
     }
     localStorage.setItem("user", JSON.stringify(storageArray))
 })
+
+// var textToSave= $(`.text${$(this).attr("id")}`).val()
