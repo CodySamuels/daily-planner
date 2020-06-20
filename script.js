@@ -1,6 +1,5 @@
 // GLOBAL VARIABLES ------------------------------------
 var currentHourMilitaryTime = parseInt(moment().format("HH"))
-var currentDate = moment().format("MMM Do, YYYY");
 var storageArray = JSON.parse(localStorage.getItem("dateData")) || ["", "", "", "", "", "", "", "", "",];
 
 // RUNS ON PAGE LOAD ----------------------------------
@@ -9,7 +8,7 @@ populateText(9)
 
 // FUNCTIONS ------------------------------------------
 function pageLoad() {
-    $("#currentDay").append(currentDate)
+    $("#currentDay").append(moment().format("MMM Do, YYYY"));
     for (let i = 9; i <= 17; i++) {
         timeCheck([i]);
     }
@@ -34,7 +33,7 @@ function populateText(x) {
 // EVENT LISTENERS ------------------------------------
 for (let i = 0; i <= storageArray.length; i++) {
     $("#" + i + "save").click(function () {
-        storageArray.splice(i, 1,$("textarea")[i].value);
+        storageArray.splice(i, 1, $("textarea")[i].value);
         localStorage.setItem("dateData", JSON.stringify(storageArray))
     })
 }
